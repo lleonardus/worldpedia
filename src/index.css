@@ -1,3 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .light-theme {
+    --color-text: 200deg 15% 8%;
+    --color-input: 200deg 15% 8%;
+    --color-background: 0deg 0% 98%;
+    --color-elements: 0deg 0% 100%;
+  }
+
+  .dark-theme {
+    --color-text: 0deg 0% 100%;
+    --color-input: 0deg 0% 100%;
+    --color-background: 207deg 26% 17%;
+    --color-elements: 209deg 23% 22%;
+  }
+}
