@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  :root {
+    --max-width: 1640px;
+  }
+}
+
 @layer components {
   .light-theme {
     --color-text: 200deg 15% 8%;
