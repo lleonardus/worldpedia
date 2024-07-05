@@ -8,12 +8,15 @@ export default {
       background: "hsl(var(--color-background) / <alpha-value>)",
       elements: "hsl(var(--color-elements) / <alpha-value>)",
       white: "#FFF",
-      black: "#000"
+      black: "#000",
     },
     extend: {
       fontFamily: {
-        sans: "Nunito Sans, sans-serif"
-      }
+        sans: "Nunito Sans, sans-serif",
+      },
+      height: {
+        screen: "100dvh",
+      },
     },
   },
   plugins: [],
