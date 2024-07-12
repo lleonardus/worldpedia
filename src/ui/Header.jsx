@@ -14,7 +14,7 @@ export function Header() {
   }
 
   useEffect(
-    function () {
+    function() {
       localStorage.setItem("theme", theme);
       document.children[0].classList.remove(
         theme === "light-theme" ? "dark-theme" : "light-theme",

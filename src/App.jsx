@@ -1,6 +1,9 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { AppLayout } from "./ui/AppLayout";
-import { Homepage } from "./features/homepage/Homepage";
+import {
+  Homepage,
+  loader as homepageLoader,
+} from "./features/homepage/Homepage";
 
 const router = createBrowserRouter([
   {
@@ -9,10 +12,12 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Homepage />,
+        loader: homepageLoader,
       },
       {
         path: "/region/:region",
         element: <Homepage />,
+        loader: homepageLoader,
       },
     ],
   },
