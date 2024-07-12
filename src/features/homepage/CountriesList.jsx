@@ -1,4 +1,5 @@
 import { useLoaderData } from "react-router-dom";
+import { formatNumber } from "../../utils/formatters";
 
 export function CountriesList() {
   const { countries } = useLoaderData();
@@ -19,7 +20,9 @@ export function CountriesList() {
             <div className="space-y-1 pb-10 pt-3">
               <p>
                 <span className="font-bold">Population: </span>
-                <span className="font-light">{country.population}</span>
+                <span className="font-light">
+                  {formatNumber(country.population)}
+                </span>
               </p>
               <p>
                 <span className="font-bold">Region: </span>
