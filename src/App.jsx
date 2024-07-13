@@ -4,6 +4,10 @@ import {
   Homepage,
   loader as homepageLoader,
 } from "./features/homepage/Homepage";
+import {
+  DetailsPage,
+  loader as detailsPageLoader,
+} from "./features/details-page/DetailsPage";
 
 const router = createBrowserRouter([
   {
@@ -18,6 +22,11 @@ const router = createBrowserRouter([
         path: "/region/:region",
         element: <Homepage />,
         loader: homepageLoader,
+      },
+      {
+        path: "/country/:countryName",
+        element: <DetailsPage />,
+        loader: detailsPageLoader,
       },
     ],
   },

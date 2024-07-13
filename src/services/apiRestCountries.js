@@ -121,3 +121,31 @@ export async function getCountries(region) {
     console.log(error);
   }
 }
+
+export async function getCountryByName(countryName) {
+  try {
+    const response = await fetch(`${API_URL}/name/${countryName}`);
+    const data = await response.json();
+
+    return data[0];
+  } catch (e) {
+    console.log(e);
+  }
+}
+
+export async function getBorderCountries(borderCodes) {
+  try {
+    if (borderCodes && borderCodes.length > 0) {
+      const response = await fetch(
+        `${API_URL}/alpha?codes=${borderCodes.join(",")}`,
+      );
+      const data = await response.json();
+
+      return data;
+    } else {
+      return [];
+    }
+  } catch (e) {
+    console.log(e);
+  }
+}
