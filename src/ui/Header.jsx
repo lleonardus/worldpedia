@@ -37,7 +37,7 @@ export function Header() {
           <ion-icon
             name={`moon${theme === "light-theme" ? "-outline" : ""}`}
           ></ion-icon>
-          <span>{theme.split("-")[0]} Mode</span>
+          <span className="hidden sm:block">{theme.split("-")[0]} Mode</span>
         </button>
       </div>
     </header>
