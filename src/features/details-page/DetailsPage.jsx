@@ -1,7 +1,7 @@
 import { Link, useLoaderData, useNavigate } from "react-router-dom";
 import {
-  getBorderCountries,
   getCountryByName,
+  getBorderCountries,
 } from "../../services/apiRestCountries";
 import { formatNumber } from "../../utils/formatters";
 
@@ -30,26 +30,26 @@ export function DetailsPage() {
         <span>Back</span>
       </button>
       <div className="grid lg:grid-cols-[minmax(400px,_600px)_auto] lg:grid-rows-[minmax(0,_1fr)_auto] lg:gap-x-24 xl:gap-x-36">
-        <div className="min-w-[250px]">
+        <div className="max-h-[600px] w-full min-w-[250px]">
           <img
             src={country.flags.svg}
             alt={`Flag of ${country.name.common}`}
-            className="object-cover"
+            className="h-full w-full object-cover"
           />
         </div>
         <div className="lg:w-full lg:justify-self-center lg:pt-14">
           <h2 className="pb-5 pt-10 text-xl font-extrabold md:text-2xl lg:pt-0 lg:text-3xl">
             {country.name.common}
           </h2>
-          <div className="flex flex-col gap-10 sm:flex-row sm:justify-between">
+          <div className="flex flex-col gap-10 sm:flex-row sm:gap-x-32 lg:justify-between lg:gap-10">
             <ul className="flex flex-col gap-3">
               <li>
                 <span className="font-semibold">Native Name: </span>
                 <span className="font-light">
                   {country.name.nativeName
                     ? Object.values(country.name.nativeName)
-                      .map((name) => name.common)
-                      .join(", ")
+                        .map((name) => name.common)
+                        .join(", ")
                     : "N/A"}
                 </span>
               </li>
@@ -84,8 +84,8 @@ export function DetailsPage() {
                 <span className="font-light">
                   {country.currencies
                     ? Object.values(country.currencies)
-                      .map((currency) => currency.name)
-                      .join(", ")
+                        .map((currency) => currency.name)
+                        .join(", ")
                     : "N/A"}
                 </span>
               </li>
