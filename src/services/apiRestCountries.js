@@ -126,8 +126,13 @@ export async function getCountryByName(countryName) {
   try {
     const response = await fetch(`${API_URL}/name/${countryName}`);
     const data = await response.json();
+    const country = data.filter(
+      (country) =>
+        country.name.official === countryName ||
+        country.name.common === countryName,
+    )[0];
 
-    return data[0];
+    return country;
   } catch (e) {
     console.log(e);
   }
