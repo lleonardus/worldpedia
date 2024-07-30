@@ -48,8 +48,8 @@ export function DetailsPage() {
                 <span className="font-light">
                   {country.name.nativeName
                     ? Object.values(country.name.nativeName)
-                        .map((name) => name.common)
-                        .join(", ")
+                      .map((name) => name.common)
+                      .join(", ")
                     : "N/A"}
                 </span>
               </li>
@@ -84,8 +84,8 @@ export function DetailsPage() {
                 <span className="font-light">
                   {country.currencies
                     ? Object.values(country.currencies)
-                        .map((currency) => currency.name)
-                        .join(", ")
+                      .map((currency) => currency.name)
+                      .join(", ")
                     : "N/A"}
                 </span>
               </li>

@@ -110,47 +110,38 @@ const defaultCountries = [
 export async function getCountries(region) {
   if (!region) return defaultCountries;
 
-  try {
+  const response = await fetch(
+    `${API_URL}/region/${region}?fields=flags,name,population,region,capital`,
+  );
+  const data = await response.json();
+
+  return data;
+}
+
+export async function getCountryByName(countryName) {
+  const response = await fetch(`${API_URL}/name/${countryName}`);
+  const data = await response.json();
+
+  if (!data.length) throw new Error("Country not found 🗺️");
+
+  const country = data.filter(
+    (country) =>
+      country.name.official === countryName ||
+      country.name.common === countryName,
+  )[0];
+
+  return country;
+}
+
+export async function getBorderCountries(borderCodes) {
+  if (borderCodes && borderCodes.length > 0) {
     const response = await fetch(
-      `${API_URL}/region/${region}?fields=flags,name,population,region,capital`,
+      `${API_URL}/alpha?codes=${borderCodes.join(",")}`,
     );
     const data = await response.json();
 
     return data;
-  } catch (error) {
-    console.log(error);
-  }
-}
-
-export async function getCountryByName(countryName) {
-  try {
-    const response = await fetch(`${API_URL}/name/${countryName}`);
-    const data = await response.json();
-    const country = data.filter(
-      (country) =>
-        country.name.official === countryName ||
-        country.name.common === countryName,
-    )[0];
-
-    return country;
-  } catch (e) {
-    console.log(e);
-  }
-}
-
-export async function getBorderCountries(borderCodes) {
-  try {
-    if (borderCodes && borderCodes.length > 0) {
-      const response = await fetch(
-        `${API_URL}/alpha?codes=${borderCodes.join(",")}`,
-      );
-      const data = await response.json();
-
-      return data;
-    } else {
-      return [];
-    }
-  } catch (e) {
-    console.log(e);
+  } else {
+    return [];
   }
 }

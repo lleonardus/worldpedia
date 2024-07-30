@@ -1,5 +1,6 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { AppLayout } from "./ui/AppLayout";
+import { ErrorPage } from "./ui/ErrorPage";
 import {
   Homepage,
   loader as homepageLoader,
@@ -12,6 +13,7 @@ import {
 const router = createBrowserRouter([
   {
     element: <AppLayout />,
+    errorElement: <ErrorPage />,
     children: [
       {
         path: "/",
@@ -27,6 +29,7 @@ const router = createBrowserRouter([
         path: "/country/:countryName",
         element: <DetailsPage />,
         loader: detailsPageLoader,
+        errorElement: <ErrorPage />,
       },
     ],
   },
