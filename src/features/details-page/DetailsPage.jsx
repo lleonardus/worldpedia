@@ -34,7 +34,7 @@ export function DetailsPage() {
           <img
             src={country.flags.svg}
             alt={`Flag of ${country.name.common}`}
-            className="h-full w-full object-cover"
+            className="h-full w-full"
           />
         </div>
         <div className="lg:w-full lg:justify-self-center lg:pt-14">
