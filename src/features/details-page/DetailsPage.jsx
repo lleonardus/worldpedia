@@ -48,12 +48,12 @@ export function DetailsPage() {
                 <span className="font-light">
                   {country.name.nativeName
                     ? [
-                        ...new Set(
-                          Object.values(country.name.nativeName).map(
-                            (name) => name.common,
-                          ),
+                      ...new Set(
+                        Object.values(country.name.nativeName).map(
+                          (name) => name.common,
                         ),
-                      ].join(", ")
+                      ),
+                    ].join(", ")
                     : "N/A"}
                 </span>
               </li>
@@ -88,8 +88,8 @@ export function DetailsPage() {
                 <span className="font-light">
                   {country.currencies
                     ? Object.values(country.currencies)
-                        .map((currency) => currency.name)
-                        .join(", ")
+                      .map((currency) => currency.name)
+                      .join(", ")
                     : "N/A"}
                 </span>
               </li>
@@ -111,10 +111,10 @@ export function DetailsPage() {
               borderCountries.map((borderCountry, i) => (
                 <li key={i}>
                   <Link
-                    to={`/country/${borderCountry.name.common}`}
+                    to={`/country/${borderCountry}`}
                     className="rounded-sm bg-elements px-3 py-1.5 font-light shadow"
                   >
-                    {borderCountry.name.common}
+                    {borderCountry}
                   </Link>
                 </li>
               ))

@@ -33,7 +33,9 @@ export async function getBorderCountries(borderCodes) {
     );
     const data = await response.json();
 
-    return data;
+    return data
+      .map((country) => country.name.common)
+      .sort((a, b) => a.localeCompare(b));
   } else {
     return [];
   }
