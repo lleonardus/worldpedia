@@ -31,7 +31,9 @@ export function CountriesList() {
                 </p>
                 <p>
                   <span className="font-bold">Capital: </span>
-                  <span className="font-light">{country.capital}</span>
+                  <span className="font-light">
+                    {country.capital.join(", ")}
+                  </span>
                 </p>
               </div>
             </div>
