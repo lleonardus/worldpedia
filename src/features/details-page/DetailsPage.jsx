@@ -41,15 +41,19 @@ export function DetailsPage() {
           <h2 className="pb-5 pt-10 text-xl font-extrabold md:text-2xl lg:pt-0 lg:text-3xl">
             {country.name.common}
           </h2>
-          <div className="flex flex-col gap-10 sm:flex-row sm:gap-x-32 lg:justify-between lg:gap-10">
+          <div className="flex flex-col gap-10 sm:flex-row sm:gap-x-32 lg:justify-between lg:gap-14">
             <ul className="flex flex-col gap-3">
               <li>
                 <span className="font-semibold">Native Name: </span>
                 <span className="font-light">
                   {country.name.nativeName
-                    ? Object.values(country.name.nativeName)
-                        .map((name) => name.common)
-                        .join(", ")
+                    ? [
+                        ...new Set(
+                          Object.values(country.name.nativeName).map(
+                            (name) => name.common,
+                          ),
+                        ),
+                      ].join(", ")
                     : "N/A"}
                 </span>
               </li>
