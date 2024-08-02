@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-const regions = ["Africa", "America", "Asia", "Europe", "Oceania"];
+const regions = ["Africa", "America", "Antarctic", "Asia", "Europe", "Oceania"];
 
 export function RegionSelector() {
   const [isOpen, setIsOpen] = useState(true);
