@@ -69,7 +69,7 @@ export function DetailsPage() {
               </li>
               <li>
                 <span className="font-semibold">Sub Region: </span>
-                <span className="font-light">{country.subregion}</span>
+                <span className="font-light">{country.subregion || "N/A"}</span>
               </li>
               <li>
                 <span className="font-semibold">Capital: </span>
