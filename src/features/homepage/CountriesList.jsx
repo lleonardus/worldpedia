@@ -32,7 +32,9 @@ export function CountriesList() {
                 <p>
                   <span className="font-bold">Capital: </span>
                   <span className="font-light">
-                    {country.capital.join(", ")}
+                    {country.capital.length
+                      ? country.capital.join(", ")
+                      : "N/A"}
                   </span>
                 </p>
               </div>

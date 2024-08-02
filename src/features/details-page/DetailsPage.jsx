@@ -73,7 +73,9 @@ export function DetailsPage() {
               </li>
               <li>
                 <span className="font-semibold">Capital: </span>
-                <span className="font-light">{country.capital.join(", ")}</span>
+                <span className="font-light">
+                  {country.capital ? country.capital.join(", ") : "N/A"}
+                </span>
               </li>
             </ul>
             <ul className="flex flex-col gap-3">
