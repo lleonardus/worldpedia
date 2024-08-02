@@ -6,7 +6,10 @@ export async function getCountries(region) {
   const response = await fetch(
     `${url}?fields=flags,name,population,region,capital`,
   );
+
   const data = await response.json();
+
+  if (!data.length) throw new Error("Region not found 🗺️");
 
   return data.sort((a, b) => a.name.common.localeCompare(b.name.common));
 }
