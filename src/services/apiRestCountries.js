@@ -22,8 +22,8 @@ export async function getCountryByName(countryName) {
 
   const country = data.filter(
     (country) =>
-      country.name.official === countryName ||
-      country.name.common === countryName,
+      country.name.official.toLowerCase() === countryName.toLowerCase() ||
+      country.name.common.toLowerCase() === countryName.toLowerCase(),
   )[0];
 
   return country;
